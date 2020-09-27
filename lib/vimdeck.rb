@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'asciiart'
 require 'artii'
 require 'erb'
 require 'redcarpet'
@@ -28,13 +27,9 @@ module Vimdeck
       font.asciify(text)
     end
 
-    def self.image(img)
-      a = AsciiArt.new(img)
-      a.to_ascii_art width: 30
-    end
   end
 
-  # Custom Redcarpet renderer handles headers and images
+  # Custom Redcarpet renderer handles headers 
   # Code blocks are ignored by the renderer because they have to be
   # measured for the vimscript, so parsing of the fenced code blocks
   # happens in the slideshow generator itself
@@ -123,9 +118,6 @@ module Vimdeck
       "```#{language}#{$nl}#{code}#{$nl}```"
     end
 
-    def image(image, title, alt_text)
-      Vimdeck::Ascii.image(image)
-    end
   end
 
   class Slideshow

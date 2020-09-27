@@ -20,6 +20,5 @@ Gem::Specification.new do |s|
   s.bindir       = 'bin'
   s.executables  = ['vimdeck']
   s.add_runtime_dependency 'artii', '~>2.1.1'
-  s.add_runtime_dependency 'rasciiart', '~>0.0.9'
   s.add_runtime_dependency 'redcarpet', '~>3.1.2'
 end
